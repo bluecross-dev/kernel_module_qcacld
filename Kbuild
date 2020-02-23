@@ -40,6 +40,10 @@ endif
 WLAN_OPEN_SOURCE := 1
 
 ifneq ($(KERNEL_BUILD),)
+	# Disable BUILD_TAG
+	WLAN_DISABLE_BUILD_TAG := y
+	CONFIG_BUILD_TAG := n
+
 	# These are configurable via Kconfig for kernel-based builds
 	# Need to explicitly configure for Android-based builds
 
